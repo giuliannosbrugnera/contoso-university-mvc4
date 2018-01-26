@@ -63,7 +63,8 @@ namespace ContosoUniversity.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
+
+            var student = db.Students.Find(id);
             if (student == null)
             {
                 return HttpNotFound();
