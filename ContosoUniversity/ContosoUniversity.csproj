@@ -153,9 +153,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801261647024_InitialCreate.cs" />
-    <Compile Include="Migrations\201801261647024_InitialCreate.Designer.cs">
-      <DependentUpon>201801261647024_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201801262125156_InitialCreate.cs" />
+    <Compile Include="Migrations\201801262125156_InitialCreate.Designer.cs">
+      <DependentUpon>201801262125156_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
@@ -172,9 +172,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -218,8 +215,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801261647024_InitialCreate.resx">
-      <DependentUpon>201801261647024_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801262125156_InitialCreate.resx">
+      <DependentUpon>201801262125156_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
