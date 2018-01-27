@@ -1,0 +1,48 @@
+﻿@model ContosoUniversity.ViewModels.InstructorIndexData
+
+@{
+    ViewBag.Title = "Instructors";
+}
+
+<h2>Instructors</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Hire Date</th>
+        <th>Office</th>
+    </tr>
+    @foreach (var item in Model.Instructors)
+    {
+        var selectedRow = "";
+        if (item.InstructorId == ViewBag.InstructorId)
+        {
+            selectedRow = "selectedrow";
+        }
+        <tr class="@selectedRow">
+            <td>
+                @Html.ActionLink("Select", "Index", new { id = item.InstructorId }) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.InstructorId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.InstructorId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.InstructorId })
+            </td>
+            <td>
+                @item.LastName
+            </td>
+            <td>
+                @item.FirstMidName
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HireDate)
+            </td>
+            <td>
+                @item.OfficeAssignment?.Location
+            </td>
+        </tr>
+    }
+</table>
