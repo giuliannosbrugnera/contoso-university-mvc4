@@ -10,16 +10,18 @@ namespace ContosoUniversity.Models
         public int StudentId { get; set; }
 
         [Display(Name = "Last Name")]
-        [StringLength(50)]
+        [StringLength(50, MinimumLength = 1)]
         public string LastName { get; set; }
 
         [Display(Name = "First Mid Name")]
-        [StringLength(50, ErrorMessage = "First name cannot be longer than 50 characters.")]
+        [StringLength(50, MinimumLength = 1, ErrorMessage = "First name cannot be longer than 50 characters.")]
         [Column("FirstName")]
         public string FirstMidName { get; set; }
 
         [Display(Name = "Enrollment Date")]
         public DateTime EnrollmentDate { get; set; }
+
+        public string FullName => LastName + ", " + FirstMidName;
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
