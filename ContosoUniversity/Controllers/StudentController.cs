@@ -12,11 +12,18 @@ namespace ContosoUniversity.Controllers
         private SchoolContext db = new SchoolContext();
 
         // GET: Student
-        public ActionResult Index(string sortOrder)
+        public ViewResult Index(string sortOrder, string searchString)
         {
             ViewBag.NameSortParm = string.IsNullOrEmpty(sortOrder) ? "Name_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "Date_desc" : "Date";
             var students = db.Students.Select(_ => _);
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s =>
+                    s.LastName.ToUpper().Contains(searchString.ToUpper()) ||
+                    s.FirstMidName.ToUpper().Contains(searchString.ToUpper()));
+            }
 
             switch (sortOrder)
             {
