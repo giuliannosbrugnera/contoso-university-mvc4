@@ -30,7 +30,7 @@ namespace ContosoUniversity.Controllers
 
             ViewBag.CurrentFilter = searchString;
 
-            var students =db.Students.Select(_ => _);
+            var students = db.Students.Select(_ => _);
             if (!string.IsNullOrEmpty(searchString))
             {
                 students = students.Where(s => s.LastName.ToUpper().Contains(searchString.ToUpper())
