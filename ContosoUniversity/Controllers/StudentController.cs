@@ -47,7 +47,7 @@ namespace ContosoUniversity.Controllers
                 case "date_desc":
                     students = students.OrderByDescending(s => s.EnrollmentDate);
                     break;
-                default:  // Name ascending 
+                default:  // Name ascending
                     students = students.OrderBy(s => s.LastName);
                     break;
             }
@@ -81,7 +81,7 @@ namespace ContosoUniversity.Controllers
         }
 
         // POST: Student/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -114,7 +114,7 @@ namespace ContosoUniversity.Controllers
         }
 
         // POST: Student/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
